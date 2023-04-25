@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/flCanvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <net.mguler.drawingapp.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80FFFFFF" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/llColors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/flCanvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/ibtn1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_bg"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn1"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn1" />
+
+        <ImageButton
+            android:id="@+id/ibtn2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/rounded_bg"
+            android:cropToPadding="false"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn2"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn2" />
+
+        <ImageButton
+            android:id="@+id/ibtn3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_bg"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn3"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn3" />
+
+        <ImageButton
+            android:id="@+id/ibtn4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_bg"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn4"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn4" />
+
+        <ImageButton
+            android:id="@+id/ibtn5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_bg"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn5"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn5" />
+
+        <ImageButton
+            android:id="@+id/ibtn6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_bg"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:tag="@color/ibtn6"
+            app:srcCompat="@drawable/circle2"
+            app:tint="@color/ibtn6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ibtnBrush"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_brush" />
+
+        <ImageButton
+            android:id="@+id/ibtnUndo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_undo" />
+
+        <ImageButton
+            android:id="@+id/ibtnGallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_gallery" />
+
+        <ImageButton
+            android:id="@+id/ibtnSave"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_save" />
+
+        <ImageButton
+            android:id="@+id/ibtnShare"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_share" />
+
+        <ImageButton
+            android:id="@+id/ibtnDel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_bg_btn"
+            app:srcCompat="@drawable/ic_del"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
