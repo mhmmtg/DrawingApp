@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/circle1"
+        android:title="S" />
+    <item
+        android:icon="@drawable/circle2"
+        android:title="M" />
+    <item
+        android:icon="@drawable/circle3"
+        android:title="B" />
+</menu>

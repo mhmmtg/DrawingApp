@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:visibility="gone"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <net.mguler.drawingapp.DrawingView
@@ -116,7 +115,7 @@
 
     <LinearLayout
         android:id="@+id/llButtons"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -125,48 +124,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/ibtnBrush"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_brush" />
-
-        <ImageButton
-            android:id="@+id/ibtnUndo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_undo" />
-
-        <ImageButton
-            android:id="@+id/ibtnGallery"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_gallery" />
-
-        <ImageButton
-            android:id="@+id/ibtnSave"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_save" />
-
-        <ImageButton
-            android:id="@+id/ibtnShare"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_share" />
 
         <ImageButton
             android:id="@+id/ibtnDel"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_margin="5dp"
             android:background="@drawable/rounded_bg_btn"
+            android:visibility="gone"
             app:srcCompat="@drawable/ic_del"
             app:tint="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabDel"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:backgroundTint="#21005D"
+            app:fabCustomSize="45dp"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+            app:srcCompat="@drawable/ic_info"
+            app:tint="#EADDFF" />
     </LinearLayout>
 
 
