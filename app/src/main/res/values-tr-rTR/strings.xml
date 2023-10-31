@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">İlk Çizgiler</string>
+    <string name="action_settings">Ayarlar</string>
+
+
+    <string name="brush_size">Fırça büyüklüğü</string>
+    <string name="undo_last">Son çizimi geri al</string>
+    <string name="pick_photo">Galeriden fotoğraf seç</string>
+    <string name="save_drawing">Çizimi kaydet</string>
+    <string name="about_app">Uygulama hakkında</string>
+    <string name="clear">Temizle</string>
+    <string name="pick_color_6">Renk seç 6</string>
+    <string name="pick_color_5">Renk seç 5</string>
+    <string name="pick_color_4">Renk seç 4</string>
+    <string name="pick_color_3">Renk seç 3</string>
+    <string name="pick_color_2">Renk seç 2</string>
+    <string name="pick_color_1">Renk seç 1</string>
+</resources>

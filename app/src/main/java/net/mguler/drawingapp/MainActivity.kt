@@ -20,7 +20,6 @@ import android.provider.MediaStore.Images.Media.MIME_TYPE
 import android.provider.MediaStore.Images.Media.WIDTH
 import android.provider.MediaStore.Images.Media.getContentUri
 import android.view.View
-import android.widget.ImageButton
 import android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
 import android.widget.PopupWindow
 import android.widget.Toast
@@ -31,11 +30,11 @@ import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.mguler.drawingapp.databinding.ActivityMainBinding
 import net.mguler.drawingapp.databinding.DialogBrushSizeBinding
-import net.mguler.drawingapp.databinding.DialogInfoBinding
 import net.mguler.drawingapp.databinding.HiddenButtonsBinding
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -49,7 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var permLauncher2: ActivityResultLauncher<String>
 
-    private val minSdk29 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
     private var writePermGranted = false
 
     private var isBgAdded = false
@@ -187,16 +185,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun askWritePermission() {
+        val minSdk29 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
+
         val permWrite = Manifest.permission.WRITE_EXTERNAL_STORAGE
         val permGranted = PackageManager.PERMISSION_GRANTED
         val hasWritePerm = ContextCompat.checkSelfPermission(this, permWrite) ==  permGranted
 
         writePermGranted = hasWritePerm || minSdk29
-        if (!writePermGranted) {
-            permLauncher2.launch(permWrite)
-        }
-        else {
-            saveToExternal()
+
+        when {
+            //Granted
+            writePermGranted -> {
+                saveToExternal()
+            }
+            //Rationale
+            shouldShowRequestPermissionRationale(permWrite) -> {
+                Snackbar.make(binding.root, "Permission needed to save image!", Snackbar.LENGTH_LONG)
+                    .setAction("Give It!") { permLauncher2.launch(permWrite) }
+                    .show()
+            }
+            //Denied-Not asked
+            else -> { saveToExternal() }
         }
 
     }
@@ -272,7 +281,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showInfoDialog() {
-        val dialog = Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+        //val dialog = Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+        val dialog = Dialog(this, android.R.style.Theme_Black_NoTitleBar)
         dialog.setContentView(R.layout.dialog_info)
         dialog.show()
     }
@@ -297,7 +307,6 @@ class MainActivity : AppCompatActivity() {
 
 
 // TODO: icon alignment
-// TODO: info inspired
 
 /*
 when {
@@ -315,22 +324,10 @@ when {
     else -> { permLauncher.launch(perm_read) }
 }
 
-
-
-
-when {
-            //Granted
-            hasWritePerm -> {
-                lifecycleScope.launch { saveBitmap(viewToBitmap(binding.flCanvas)) }
-            }
-            //Rationale
-            shouldShowRequestPermissionRationale(permWrite) -> {
-                Snackbar.make(binding.root, "Permission needed to save image!", Snackbar.LENGTH_LONG)
-                    .setAction("Give It!") { permLauncher.launch(permWrite) }
-                    .show()
-            }
-            //Denied-Not asked
-            else -> { permLauncher.launch(permWrite) }
+ if (!writePermGranted) {
+            permLauncher2.launch(permWrite)
         }
+        else { saveToExternal() }
+
 
  */

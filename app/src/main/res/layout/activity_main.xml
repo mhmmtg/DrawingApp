@@ -48,6 +48,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_1"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="@color/ibtn1"
@@ -60,6 +61,7 @@
             android:layout_height="50dp"
             android:adjustViewBounds="false"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_2"
             android:cropToPadding="false"
             android:padding="5dp"
             android:scaleType="fitXY"
@@ -72,6 +74,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_3"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="@color/ibtn3"
@@ -83,6 +86,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_4"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="@color/ibtn4"
@@ -94,6 +98,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_5"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="@color/ibtn5"
@@ -105,6 +110,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
+            android:contentDescription="@string/pick_color_6"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="@color/ibtn6"
@@ -125,24 +131,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageButton
-            android:id="@+id/ibtnDel"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/rounded_bg_btn"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_del"
-            app:tint="@color/white" />
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabDel"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:contentDescription="@string/clear"
             app:backgroundTint="#21005D"
             app:fabCustomSize="45dp"
             app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-            app:srcCompat="@drawable/ic_info"
+            app:srcCompat="@drawable/ic_delete"
             app:tint="#EADDFF" />
     </LinearLayout>
 
