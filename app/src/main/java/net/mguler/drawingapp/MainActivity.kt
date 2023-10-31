@@ -240,7 +240,7 @@ class MainActivity : AppCompatActivity() {
             contentResolver.insert(up29Uri, contentValues).also { uri->
                 contentResolver.openOutputStream(uri!!).use { outputStream->
                     try {
-                        bmp.compress(Bitmap.CompressFormat.PNG, 90, outputStream)
+                        bmp.compress(Bitmap.CompressFormat.PNG, 90, outputStream!!)
                     }
                     catch (e: Exception) {
                         Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
